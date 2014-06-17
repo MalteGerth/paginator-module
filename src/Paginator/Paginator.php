@@ -267,6 +267,24 @@ class Paginator implements EventManagerAwareInterface
     }
 
     /**
+     * Get the sorting by $key
+     *
+     * @param string $key Key
+     * 
+     * @return SortingContainer
+     */
+    public function getSorting($key)
+    {
+        $sorting = null;
+
+        if ($this->sortings->has($key)) {
+            $sorting = $this->sortings->get($key);
+        }
+
+        return $sorting;
+    }
+
+    /**
      * Set event manager
      * 
      * @param EventManagerInterface $eventManager Event manager
