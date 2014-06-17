@@ -75,7 +75,7 @@ class AbstractDoctrinePaginatorFactory implements AbstractFactoryInterface
             }
         } else {
             $parts = explode('\\', $entityClass);
-            $alias = strtolower(substr(end($parts), 0, 1));
+            $alias = end($parts);
 
             $queryBuilder = $entityRepository->createQueryBuilder($alias);
         }
